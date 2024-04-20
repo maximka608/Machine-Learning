@@ -6,13 +6,9 @@ import matplotlib.pyplot as plt
 
 
 if __name__ == '__main__':
-    # env = lab3.gym.make('MountainCar-v0', render_mode='human')
-    # position = np.linspace(-1.2, 0.6, 20)
-    # velocity = np.linspace(-0.07, 0.07, 20)
-
     env = lab3.gym.make('MountainCar-v0', render_mode=None)
-    position = np.linspace(-1.2, 0.6, 17)
-    velocity = np.linspace(-0.07, 0.07, 17)
+    position = np.linspace(-1.2, 0.6, 20)
+    velocity = np.linspace(-0.07, 0.07, 20)
 
     q_table = np.load('q_table.npy')
     print(q_table)
