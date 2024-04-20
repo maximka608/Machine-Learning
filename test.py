@@ -17,8 +17,9 @@ if __name__ == '__main__':
     q_table = np.load('q_table.npy')
     print(q_table)
     ans = 0
+    n = 10
 
-    for k in range(1000):
+    for k in range(n):
         state = env.reset()
         discrete_state = lab3.discrete(state[0], position, velocity)
         done = False
@@ -41,7 +42,7 @@ if __name__ == '__main__':
             total_reward += reward
         print(f"Episode {k+1}: Total Reward: {total_reward}")
 
-    print("Accurancy", ans / 1000 * 100)
+    print("Accurancy", (ans / n) * 100)
     q_table_mean = np.mean(q_table, axis=2)  
 
     plt.imshow(q_table_mean, cmap='hot', interpolation='nearest')
